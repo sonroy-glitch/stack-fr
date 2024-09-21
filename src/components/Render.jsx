@@ -285,7 +285,7 @@ const Render = () => {
                     <div className="w-full lg:w-1/12 flex flex-col items-center">
               {/* upvote button */}
                 <img src={upvote} className="h-6" onClick={(e)=>answervoteup(index1)}/>
-                <div>{item.upvote.length - item.downvote.length}</div>
+                <div>{item.upvote.length||0 - item.downvote.length||0}</div>
                 {/* downvote butn */}
                 <img src={downvote} className="h-6" onClick={(e)=>answervotedown(index1)} />
               </div>
