@@ -187,10 +187,9 @@ alert("You need to be signed in to vote");
       };
 
       try {
-        const response = await axios.post("https://stack-bc.vercel.app/answer/vote", send, {
+        const response = await axios.post("https://stack-bc.vercel.app/api/answer/vote", send, {
           headers: {
             auth,
-            question_id: id,
           },
         });
 
@@ -231,7 +230,7 @@ alert("You need to be signed in to vote");
       };
 
       try {
-        const response = await axios.post("https://stack-bc.vercel.app/answer/vote", send, {
+        const response = await axios.post("https://stack-bc.vercel.app/api/answer/vote", send, {
           headers: {
             auth,
           },
