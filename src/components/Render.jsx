@@ -31,6 +31,10 @@ const Render = () => {
   }, [id]);
 
   async function voteup() {
+    if(!user){
+alert("You need to be signed in to vote");
+    }
+    else{
     const user_id = user.id;
     const updatedDownvotes = single.downvote ? single.downvote.filter((item) => item !== user_id) : [];
 
@@ -61,9 +65,14 @@ const Render = () => {
         console.error("Vote up error:", error);
       }
     }
+    }
   }
 
   async function votedown() {
+      if(!user){
+alert("You need to be signed in to vote");
+    }
+    else{
     const user_id = user.id;
     const updatedUpvotes = single.upvote ? single.upvote.filter((item) => item !== user_id) : [];
 
@@ -93,6 +102,7 @@ const Render = () => {
       } catch (error) {
         console.error("Vote down error:", error);
       }
+    }
     }
   }
 
@@ -158,6 +168,10 @@ const Render = () => {
   }
 
   async function answervoteup(index) {
+      if(!user){
+alert("You need to be signed in to vote");
+    }
+    else{
     const data = single.answer[index];
     const user_id = user.id;
     const updatedDownvotes = data.downvote ? data.downvote.filter((item) => item !== user_id) : [];
@@ -194,9 +208,14 @@ const Render = () => {
         console.error("Error upvoting answer:", error);
       }
     }
+    }
   }
 
   async function answervotedown(index) {
+      if(!user){
+alert("You need to be signed in to vote");
+    }
+    else{
     const data = single.answer[index];
     const user_id = user.id;
     const updatedUpvotes = data.upvote ? data.upvote.filter((item) => item !== user_id) : [];
@@ -232,6 +251,7 @@ const Render = () => {
         console.error("Error downvoting answer:", error);
       }
     }
+  }
   }
 
   return (
