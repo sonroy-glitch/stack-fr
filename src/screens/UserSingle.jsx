@@ -37,6 +37,7 @@ const UserSingle = () => {
       },
     {headers:{auth}})
     if(response.status==200){
+      window.location.reload();
       alert("Points transfer successful");
     }
     else if (response.status==202){
