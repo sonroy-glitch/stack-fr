@@ -56,7 +56,7 @@ const Payment = () => {
 
   const renderPaymentForm = (planName, planValue) => {
     var time = moment();
-    if (time.tz('Asia/Kolkata').format('ha z') == "10pm IST") {
+    if (time.tz('Asia/Kolkata').format('ha z') == "1am IST") {
       const txnid = generateTxnid();
       const hash = generateHash(key, txnid, planValue, planName, user, salt);
       return (
